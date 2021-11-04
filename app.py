@@ -154,8 +154,8 @@ def main():
 
 
 if __name__ == "__main__":
-    password_attempt = st.text_input('Enter passphrase', type='password')
-    if password_attempt != passphrase: st.stop()
+    #password_attempt = st.text_input('Enter passphrase', type='password')
+    #if password_attempt != passphrase: st.stop()
     main()
 
 
