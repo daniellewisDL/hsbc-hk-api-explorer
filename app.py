@@ -136,6 +136,7 @@ def main():
 
     if chosen_api != 'Choose...':
         response = requests.get(domain_url, headers=headers)
+        st.write(response)
         json_response = response.json()
         pretty_response = json.dumps(response.json(), indent=4)
         first_n_chars = 6000
