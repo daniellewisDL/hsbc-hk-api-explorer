@@ -19,6 +19,7 @@ else:
     live_client_id = st.secrets["live_client_id"]
     live_client_secret = st.secrets["live_client_secret"]
     passphrase = st.secrets["passphrase"]
+    st.write("in secrets")
 
 st.write(sandbox_client_id)
 
