@@ -19,7 +19,7 @@ else:
     live_client_secret = st.secrets["live_client_secret"]
     passphrase = st.secrets["passphrase"]
 
-headers_sandbox = {
+sandbox_headers = {
     'ClientID': sandbox_client_id,
     'ClientSecret': sandbox_client_secret,
     'Accept-Language': 'en-HK'
@@ -128,7 +128,7 @@ def main():
         headers = live_headers
         domain_url = live_domain_url+chosen_api
     else:
-        headers = headers_sandbox
+        headers = sandbox_headers
         domain_url = sandbox_domain_url+chosen_api
 
     st.markdown('---')
@@ -136,6 +136,7 @@ def main():
     if chosen_api != 'Choose...':
         response = requests.get(domain_url, headers=headers)
         st.write(response)
+        st.write(headers)
         json_response = response.json()
         pretty_response = json.dumps(response.json(), indent=4)
         first_n_chars = 6000
