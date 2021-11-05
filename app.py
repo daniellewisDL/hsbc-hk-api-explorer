@@ -12,14 +12,12 @@ if 'sandbox_client_id' in environ:
     live_client_id = environ['live_client_id']
     live_client_secret = environ['live_client_secret']
     passphrase = environ['passphrase']
-    st.write("h")
 else:
     sandbox_client_id = st.secrets["sandbox_client_id"]
     sandbox_client_secret = st.secrets["sandbox_client_secret"]
     live_client_id = st.secrets["live_client_id"]
     live_client_secret = st.secrets["live_client_secret"]
     passphrase = st.secrets["passphrase"]
-    st.write("s")
 
 headers_sandbox = {
     'ClientID': sandbox_client_id,
@@ -156,8 +154,9 @@ def main():
 
 
 if __name__ == "__main__":
-    #password_attempt = st.text_input('Enter passphrase', type='password')
-    #if password_attempt != passphrase: st.stop()
+    password_attempt = st.text_input('Enter passphrase', type='password')
+    st.write(passphrase)
+    if password_attempt != passphrase: st.stop()
     main()
 
 
