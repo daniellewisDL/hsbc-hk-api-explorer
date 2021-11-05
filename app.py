@@ -154,10 +154,12 @@ def main():
 
 
 if __name__ == "__main__":
-    password_attempt = st.text_input('Enter passphrase', type='password')
-    st.write(passphrase)
-    if password_attempt != passphrase: st.stop()
+    #password_attempt = st.text_input('Enter passphrase', type='password')
+    #st.write(passphrase)
+    #if password_attempt != passphrase:
+    #    st.stop()
+    #else:
+    #    main()
     main()
-
-
+# End
 
